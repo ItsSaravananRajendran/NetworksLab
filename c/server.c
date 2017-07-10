@@ -11,8 +11,6 @@ void error(char *msg)
     exit(1);
 }
 
-
-
 pthread_t tid [2];
 int newsockfd;
 
