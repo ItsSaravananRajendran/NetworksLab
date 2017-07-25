@@ -7,17 +7,24 @@ class MyClient{
 	DataInputStream dataIn;  
 	DataOutputStream dataOut;
 	BufferedReader br;
+	String ClientId;
 
 	public MyClient()throws Exception{  
-		s=new Socket("localhost",3333);  
+		s=new Socket(InetAddress.getLocalHost(),15151);  
 		dataIn=new DataInputStream(s.getInputStream());  	
  		dataOut=new DataOutputStream(s.getOutputStream());  
-		br =new BufferedReader(new InputStreamReader(System.in));  
+		br =new BufferedReader(new InputStreamReader(System.in)); 
+		ClientId = "";
 		  
 	}
 
-	public void Send(String message) throws IOException{
-		dataOut.writeUTF(message);  
+	public void login(String username,String password) throws IOException{
+		ClientId = username;
+		dataOut.writeUTF(username +"---"+password);
+	}
+
+	public void send(String message,String Receiver) throws IOException{
+		dataOut.writeUTF(Receiver +"---"+ClientId+": "+message);  
 		dataOut.flush();  
 	}  
 

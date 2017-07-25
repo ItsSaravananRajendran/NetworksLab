@@ -23,12 +23,13 @@ public class EventJApplet extends JApplet implements ActionListener{
     }  
       
     public void actionPerformed(ActionEvent e){  
-		try{
+	    try{
+			System.out.println("hi");
 			hi = new MyClient();
 			hi.login("saravanan","hi");
 			hi.send("hi","all");			
 	    }catch (Exception ei){
 	    	System.out.println(ei);
-    	}  
+    	    }  
 	}
 }  

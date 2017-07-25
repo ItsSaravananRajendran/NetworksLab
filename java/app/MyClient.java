@@ -10,7 +10,7 @@ class MyClient{
 	String ClientId;
 
 	public MyClient()throws Exception{  
-		s=new Socket("localhost",3333);  
+		s=new Socket(InetAddress.getLocalHost(),15151);  
 		dataIn=new DataInputStream(s.getInputStream());  	
  		dataOut=new DataOutputStream(s.getOutputStream());  
 		br =new BufferedReader(new InputStreamReader(System.in)); 
