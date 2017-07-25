@@ -42,6 +42,9 @@ class MyServer extends Thread {
 				for (int I=0;I<count;I++){
 					if (content1[0].equals("all")){
 						userMessages[id][I] = userMessages[id][I]+content1[1];
+						if (id != I){
+							userMessages[I][id] = userMessages[I][id]+content1[1];	
+						}
 					}else if(content1[0] == users[I]){
 						userMessages[id][id] =  userMessages[id][id] + content1[1];
 						userMessages[I][id] =  userMessages[I][id] + content1[1];
