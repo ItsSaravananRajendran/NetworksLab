@@ -15,6 +15,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import MyClient.*;
 
 public class ClientChatForm extends JFrame implements ActionListener {
 	static Socket conn;

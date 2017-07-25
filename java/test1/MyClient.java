@@ -3,11 +3,12 @@ import java.io.*;
 
 class MyClient{
 
-	Socket s;
-	DataInputStream dataIn;  
-	DataOutputStream dataOut;
+	Socket s[];
+	DataInputStream dataIn[];  
+	DataOutputStream dataOut[];
 	BufferedReader br;
 	String ClientId;
+	String otherMsg[];
 
 	public MyClient()throws Exception{  
 		s=new Socket(InetAddress.getLocalHost(),15151);  

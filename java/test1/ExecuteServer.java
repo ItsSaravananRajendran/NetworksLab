@@ -8,18 +8,20 @@ class MyServer extends Thread {
 	 static DataOutputStream dataOut[];
 	 static int count;
 	 static String users[];
-	 static String userMessages[];
+	 static String userMessages[][];
 
 	static { 
 		s = new Socket[10];
 		dataIn = new DataInputStream [10];
 		dataOut =  new DataOutputStream [10];
 		users = new String[10];
-		userMessages = new String[10];
+		userMessages = new String[10][10];
 		count = 0;
-		for (int i = 0;i<10;i++){
-			userMessages[i] = "";
-		}   
+		for (int j=0;j<10;j++){
+			for (int i = 0;i<10;i++){
+				userMessages[j][i] = "";
+			}	
+		}
 	}
 
 	public void run() {
@@ -39,12 +41,12 @@ class MyServer extends Thread {
 				String content1[] = message.split("---");
 				for (int I=0;I<count;I++){
 					if (content1[0].equals("all")){
-						userMessages[I] = userMessages[I]+content1[1];
+						userMessages[id][I] = userMessages[id][I]+content1[1];
 					}else if(content1[0] == users[I]){
-						userMessages[id] =  userMessages[id] + content1[1];
-						userMessages[I] =  userMessages[I] + content1[1];
+						userMessages[id][id] =  userMessages[id][id] + content1[1];
+						userMessages[I][id] =  userMessages[I][id] + content1[1];
 					}
-					dataOut[I].writeUTF(userMessages[I]);
+					dataOut[I].writeUTF(userMessages[id][I]);
 				}    
 			}  
 			dataIn[id].close();
