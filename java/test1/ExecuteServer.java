@@ -35,20 +35,22 @@ class MyServer extends Thread {
 			message=dataIn[id].readUTF();  
 			String content[] = message.split("---");
 			users[id] = content[0];
-			System.out.println(content[0] + content[1]);
+			System.out.println(content[0] + content[1]+id);
 			while(!message.equals("bye")){  
 				message=dataIn[id].readUTF();
 				String content1[] = message.split("---");
+				System.out.println(content1[0]+content1[1]);
 				for (int I=0;I<count;I++){
 					if (content1[0].equals("all")){
 						userMessages[id][I] = userMessages[id][I]+content1[1];
 						if (id != I){
 							userMessages[I][id] = userMessages[I][id]+content1[1];	
 						}
-					}else if(content1[0] == users[I]){
+					}else {
 						userMessages[id][id] =  userMessages[id][id] + content1[1];
 						userMessages[I][id] =  userMessages[I][id] + content1[1];
 					}
+					System.out.println(userMessages[I][0]+"=="+userMessages[I][1]);
 					dataOut[I].writeUTF(userMessages[id][I]);
 				}    
 			}  
@@ -62,6 +64,7 @@ class MyServer extends Thread {
 
 	MyServer(Socket ser) throws Exception{  
 		s[count] = ser;
+		System.out.println("connection establised");
 	}
 } 
 

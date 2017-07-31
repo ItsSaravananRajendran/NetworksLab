@@ -3,9 +3,9 @@ import java.io.*;
 
 class MyClient{
 
-	Socket s[];
-	DataInputStream dataIn[];  
-	DataOutputStream dataOut[];
+	Socket s;
+	DataInputStream dataIn;  
+	DataOutputStream dataOut;
 	BufferedReader br;
 	String ClientId;
 	String otherMsg[];

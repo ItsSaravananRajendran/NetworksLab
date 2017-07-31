@@ -1,5 +1,11 @@
 Connected to Server
 n
-ME:hwllo worldn
+Server:n
+ME:asdfsadfsdfasdfn
+Server:saro: asdfsadfsdfasdfsaro: asdfsadfsdfasdfsaro: asdfsadfsdfasdfn
+Server:saro: asdfsadfsdfasdfn
+Server:saro: asdfsadfsdfasdfn
+ME:duden
+Server:saro: asdfsadfsdfasdfsaro: asdfsadfsdfasdfsaro: asdfsadfsdfasdfsaro: dudesaro: dudesaro: duden
 ME:n
-Server:asdfasf asdfasf 
+Server:saro: asdfsadfsdfasdfsaro: asdfsadfsdfasdfsaro: asdfsadfsdfasdfsaro: dudesaro: dudesaro: dudesaro: saro: saro: saro: asdfsadfsdfasdfsaro: asdfsadfsdfasdfsaro: asdfsadfsdfasdfsaro: dudesaro: dudesaro: dudesaro: saro: saro: 

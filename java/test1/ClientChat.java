@@ -17,7 +17,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import MyClient.*;
 
-public class ClientChatForm extends JFrame implements ActionListener {
+public class ClientChat extends JFrame implements ActionListener {
 	static Socket conn;
 	JPanel panel;
 	JTextField NewMsg;
@@ -34,7 +34,7 @@ public class ClientChatForm extends JFrame implements ActionListener {
 		}
 	}
 
-	public ClientChatForm() throws UnknownHostException, IOException {
+	public ClientChat() throws UnknownHostException, IOException {
 		panel = new JPanel();
 		NewMsg = new JTextField();
 		ChatHistory = new JTextArea();
@@ -54,7 +54,7 @@ public class ClientChatForm extends JFrame implements ActionListener {
 		panel.add(Send);
 		Send.addActionListener(this);
 		//conn = new Socket(InetAddress.getLocalHost(), 15151);
-		me.login("saro1","hi");
+		me.login("saro","hi");
 
 		/*
 		 * for remote pc use ip address of server with function
@@ -97,7 +97,7 @@ public class ClientChatForm extends JFrame implements ActionListener {
 			ChatHistory.setText(ChatHistory.getText() + 'n' + "\nME:"
 					+ NewMsg.getText());
 			try {
-				me.send(NewMsg.getText(),"saro");
+				me.send(NewMsg.getText(),"saro1");
 			} catch (Exception e1) {
 				ChatHistory.setText(ChatHistory.getText() + 'n'
 						+ "\nMessage sending fail:Network Error");
@@ -115,6 +115,6 @@ public class ClientChatForm extends JFrame implements ActionListener {
 
 	public static void main(String[] args) throws UnknownHostException,
 			IOException {
-		ClientChatForm chatForm = new ClientChatForm();
+		ClientChat chatForm = new ClientChat();
 	}
 }
