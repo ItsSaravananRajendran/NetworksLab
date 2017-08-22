@@ -10,8 +10,8 @@ set val(ifq)            Queue/DropTail/PriQueue    ;# interface queue type
 set val(ll)             LL                         ;# link layer type
 set val(ant)            Antenna/OmniAntenna        ;# antenna model
 set val(ifqlen)         50                         ;# max packet in ifq
-set val(nn)             3                          ;# number of mobilenodes
-set val(rp)             AODV                       ;# routing protocol
+set val(nn)             7                          ;# number of mobilenodes
+set val(rp)             DSDV                       ;# routing protocol
 set val(x)              500   			   ;# X dimension of topography
 set val(y)              400   			   ;# Y dimension of topography  
 set val(stop)		150			   ;# time of simulation end
@@ -61,18 +61,31 @@ $node_(0) set X_ 5.0
 $node_(0) set Y_ 5.0
 $node_(0) set Z_ 0.0
 
-$node_(1) set X_ 490.0
-$node_(1) set Y_ 285.0
+$node_(1) set X_ 300.0
+$node_(1) set Y_ 500.0
 $node_(1) set Z_ 0.0
 
-$node_(2) set X_ 150.0
-$node_(2) set Y_ 240.0
+$node_(2) set X_ 90.0
+$node_(2) set Y_ 170.0
 $node_(2) set Z_ 0.0
 
+$node_(3) set X_ 160.0
+$node_(3) set Y_ 300.0
+$node_(3) set Z_ 0.0
+
+$node_(4) set X_ 250.0
+$node_(4) set Y_ 400.0
+$node_(4) set Z_ 0.0
+
+$node_(5) set X_ 70.0
+$node_(5) set Y_ 450.0
+$node_(5) set Z_ 0.0
+
+$node_(6) set X_ 150.0
+$node_(6) set Y_ 640.0
+$node_(6) set Z_ 0.0
+
 # Generation of movements
-$ns at 10.0 "$node_(0) setdest 250.0 250.0 3.0"
-$ns at 15.0 "$node_(1) setdest 45.0 285.0 5.0"
-$ns at 110.0 "$node_(0) setdest 480.0 300.0 5.0" 
 
 # Set a TCP connection between node_(0) and node_(1)
 set tcp [new Agent/TCP/Newreno]
@@ -115,6 +128,8 @@ proc stop {} {
     $ns flush-trace
     close $tracefd
     close $namtrace
+    exec nam simwrls.nam &
+    exit 0
 }
 
 $ns run

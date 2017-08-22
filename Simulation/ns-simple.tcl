@@ -94,3 +94,4 @@ puts "CBR interval = [$cbr set interval_]"
 #Run the simulation
 $ns run
 
+
