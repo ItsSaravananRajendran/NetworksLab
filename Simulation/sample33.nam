@@ -1,0 +1,3 @@
+n -t * -s 0  -x 258 -y 222 -Z 0 -z 30  -v circle -c black
+n -t * -s 1  -x 148.79526251405255 -y 301.9770736815301 -Z 0 -z 30  -v circle -c black
+n -t * -s 2  -x 328.67736547658097 -y 80.481564896405473 -Z 0 -z 30  -v circle -c black
