@@ -17,6 +17,7 @@ set tracefd [open ran.tr w]
 set namtrace [open ran.nam w]
 set dist [open distance.tr w]
 
+$ns use-newtrace 
 $ns trace-all $tracefd
 $ns namtrace-all-wireless $namtrace $val(x) $val(y)
 

@@ -14,7 +14,7 @@ set val(nn)             7                          ;# number of mobilenodes
 set val(rp)             DSDV                       ;# routing protocol
 set val(x)              500   			   ;# X dimension of topography
 set val(y)              400   			   ;# Y dimension of topography  
-set val(stop)		150			   ;# time of simulation end
+set val(stop)		1500			   ;# time of simulation end
 
 set ns		  [new Simulator]
 set tracefd       [open simple-dsdv.tr w]
