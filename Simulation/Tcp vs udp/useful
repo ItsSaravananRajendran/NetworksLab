@@ -1,0 +1,1 @@
+cat out.tr| grep "+" | grep "cbr" | wc -l
